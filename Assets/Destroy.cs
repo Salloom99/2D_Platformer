@@ -7,6 +7,6 @@ public class Destroy : MonoBehaviour
     public void DestroyObject()
     {
         Debug.Log("destroyed");
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
