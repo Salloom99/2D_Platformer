@@ -9,8 +9,7 @@ public class CombatTest : MonoBehaviour,IDamageable
 
     private Animator anim;
 
-    private float wiggleTime = 60f;
-
+    private float wiggleTime = 2f;
     private float startTimer;
 
     public void Damage(float Damage)
@@ -30,10 +29,16 @@ public class CombatTest : MonoBehaviour,IDamageable
 
     private void Update() {
 
-        if( Time.time > startTimer + wiggleTime)
+        if( Time.time >= startTimer + wiggleTime)
         {
             anim.SetBool("damage",false);
             Debug.Log("stopped");
         }
+
+    }
+
+    private void enoughHitting()
+    {
+        anim.SetBool("damage",false);
     }
 }
