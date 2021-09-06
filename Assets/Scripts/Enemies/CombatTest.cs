@@ -33,7 +33,7 @@ public class CombatTest : MonoBehaviour,IDamageable
         if( Time.time >= startTimer + wiggleTime)
         {
             anim.SetBool("damage",false);
-            Debug.Log("stopped");
+            //Debug.Log("stopped");
         }
 
     }

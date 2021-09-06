@@ -13,7 +13,6 @@ public class PlayerSlideState : PlayerGroundedState
      public override void Enter()
     {
         base.Enter();
-        startTime = Time.time;
         player.SetColliderHeight(playerData.crouchColliderHeight);
     }
 

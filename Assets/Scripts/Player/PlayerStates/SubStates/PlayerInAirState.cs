@@ -35,7 +35,7 @@ public class PlayerInAirState : PlayerState
         isGrounded = core.CollisionSenses.Ground;
         isTouchingWall = core.CollisionSenses.WallFront;
         isTouchingWallBack = core.CollisionSenses.WallBack;
-        isTouchingLedge = core.CollisionSenses.Ledge;
+        isTouchingLedge = core.CollisionSenses.UpperLedge;
 
         if(!isTouchingLedge && isTouchingWall)
             player.LedgeClimbState.SetDetectedPosition(player.transform.position);

@@ -7,23 +7,26 @@ public class CollisionSenses : CoreComponent
     public Transform GroundCheck {get => groundCheck; set => groundCheck = value;}
     public Transform CeilingCheck{get => ceilingCheck; set => ceilingCheck = value;}
     public Transform WallCheck{get => wallCheck; set => wallCheck = value;}
-    public Transform LedgeCheck{get => ledgeCheck; set => ledgeCheck = value;}
+    public Transform LedgeCheck{get => upperLedgeCheck; set => upperLedgeCheck = value;}
 
     public LayerMask WhatIsGround { get => whatIsGround; set => whatIsGround = value; }
 
     public float GroundCheckRadius { get => groundCheckRadius; set => groundCheckRadius = value; }
     public float WallCheckDistance { get => wallCheckDistance; set => wallCheckDistance = value; }
-
+    public float LedgeCheckDistance { get => ledgeCheckDistance; set => ledgeCheckDistance = value; }
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform ceilingCheck;
     [SerializeField] private Transform wallCheck;
-    [SerializeField] private Transform ledgeCheck;
+    [SerializeField] private Transform upperLedgeCheck;
+    [SerializeField] private Transform downLedgeCheck;
+    
 
     [SerializeField] private LayerMask whatIsGround;
 
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private float wallCheckDistance;
+    [SerializeField] private float ledgeCheckDistance;
     
 
     #region Check Properties
@@ -48,12 +51,15 @@ public class CollisionSenses : CoreComponent
         get => Physics2D.Raycast(wallCheck.position,Vector2.right * -core.Movement.FacingDirection,wallCheckDistance,whatIsGround);
     }
 
-    public bool Ledge
+    public bool UpperLedge
     {
-        get => Physics2D.Raycast(ledgeCheck.position,Vector2.right * core.Movement.FacingDirection,wallCheckDistance,whatIsGround);
+        get => Physics2D.Raycast(upperLedgeCheck.position,Vector2.right * core.Movement.FacingDirection,wallCheckDistance,whatIsGround);
     }
     
-
+    public bool DownLedge
+    {
+        get => Physics2D.Raycast(downLedgeCheck.position,Vector2.down,wallCheckDistance,whatIsGround);
+    }
 
     #endregion
 
