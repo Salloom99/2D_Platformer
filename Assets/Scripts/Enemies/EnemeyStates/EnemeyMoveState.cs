@@ -16,7 +16,7 @@ public class EnemeyMoveState : EnemeyState
     {
         base.Enter();
 
-        enemey.Core.Movement.SetVelocityX(EnemyData.movementSpeed);
+        enemey.Core.Movement.SetVelocityX(EnemyData.movementSpeed * enemey.Core.Movement.FacingDirection);
 
         isTouchingWall = enemey.Core.CollisionSenses.WallFront;
         isTouchingLedge = enemey.Core.CollisionSenses.DownLedge;
@@ -36,8 +36,15 @@ public class EnemeyMoveState : EnemeyState
         isTouchingWall = enemey.Core.CollisionSenses.WallFront;
         isTouchingLedge = enemey.Core.CollisionSenses.DownLedge;
 
-        if(isTouchingLedge || isTouchingWall)
+        Debug.Log("ledge "+isTouchingLedge);
+        Debug.Log("wall "+isTouchingWall);
+
+        if(!isTouchingLedge || isTouchingWall)
             statemachine.ChangeState(enemey.IdleState);
+        else
+        {
+            enemey.Core.Movement.SetVelocityX(EnemyData.movementSpeed * enemey.Core.Movement.FacingDirection);
+        }
     }
 
     public override void PhysicsUpdate()

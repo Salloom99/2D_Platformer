@@ -30,8 +30,8 @@ public class EnemeyIdleState : EnemeyState
     {
         base.Exit();
 
-        if(flipAfterIdle)
-            enemey.Core.Movement.CheckIfShouldFlip(-enemey.Core.Movement.FacingDirection);
+        //if(flipAfterIdle)
+            enemey.Core.Movement.Flip();
     }
 
     public override void LogicUpdate()

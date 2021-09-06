@@ -43,7 +43,7 @@ public class Enemey : MonoBehaviour
         Rb = GetComponent<Rigidbody2D>();
         BoxCollider = GetComponent<BoxCollider2D>();
 
-        StateMachine.Initialize(IdleState);
+        StateMachine.Initialize(MoveState);
     }
 
     public virtual void Update()

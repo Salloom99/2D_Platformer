@@ -60,7 +60,7 @@ public class Movement : CoreComponent
         CurrentVelocity = Rb.velocity;
     }
 
-    private void Flip()
+    public void Flip()
     {
         FacingDirection *= -1;
         Rb.transform.Rotate(0f,180f,0f);

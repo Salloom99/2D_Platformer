@@ -58,7 +58,7 @@ public class CollisionSenses : CoreComponent
     
     public bool DownLedge
     {
-        get => Physics2D.Raycast(downLedgeCheck.position,Vector2.down,wallCheckDistance,whatIsGround);
+        get => Physics2D.Raycast(downLedgeCheck.position,Vector2.down,ledgeCheckDistance,whatIsGround);
     }
 
     #endregion
