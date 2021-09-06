@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49120001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 445082422}
@@ -299,14 +299,14 @@ MonoBehaviour:
   groundCheck: {fileID: 0}
   ceilingCheck: {fileID: 0}
   wallCheck: {fileID: 49120002}
-  upperLedgeCheck: {fileID: 0}
+  upperLedgeCheck: {fileID: 1205698062}
   downLedgeCheck: {fileID: 1205698062}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   groundCheckRadius: 0
-  wallCheckDistance: 0.2
-  ledgeCheckDistance: 0.4
+  wallCheckDistance: 0.5
+  ledgeCheckDistance: 0.7
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -17895,7 +17895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1321123114740615349, guid: 14bf1c562fa19714cb0e7be87d8c6892, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.87
+      value: -21.65
       objectReference: {fileID: 0}
     - target: {fileID: 1321123114740615349, guid: 14bf1c562fa19714cb0e7be87d8c6892, type: 3}
       propertyPath: m_LocalPosition.y

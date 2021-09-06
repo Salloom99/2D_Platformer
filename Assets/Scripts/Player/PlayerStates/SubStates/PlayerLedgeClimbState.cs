@@ -118,12 +118,12 @@ public class PlayerLedgeClimbState : PlayerState
         float xDist = xHit.distance;
         workspace.Set((xDist + 0.015f)*core.Movement.FacingDirection,0f);
         RaycastHit2D yHit = Physics2D.Raycast(
-            core.CollisionSenses.LedgeCheck.position + (Vector3)(workspace),
+            core.CollisionSenses.UpperLedgeCheck.position + (Vector3)(workspace),
             Vector2.down,
-            core.CollisionSenses.LedgeCheck.position.y - core.CollisionSenses.WallCheck.position.y + 0.015f,
+            core.CollisionSenses.UpperLedgeCheck.position.y - core.CollisionSenses.WallCheck.position.y + 0.015f,
             core.CollisionSenses.WhatIsGround);
         float yDist = yHit.distance;
-        workspace.Set(core.CollisionSenses.WallCheck.position.x+(xDist*core.Movement.FacingDirection),core.CollisionSenses.LedgeCheck.position.y - yDist);
+        workspace.Set(core.CollisionSenses.WallCheck.position.x+(xDist*core.Movement.FacingDirection),core.CollisionSenses.UpperLedgeCheck.position.y - yDist);
         return workspace;
     }
 

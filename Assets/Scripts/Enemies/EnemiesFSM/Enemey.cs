@@ -55,4 +55,14 @@ public class Enemey : MonoBehaviour
     {
         StateMachine.CurrentState.PhysicsUpdate();    
     }
+
+    public virtual void OnDrawGizmos() {
+        Gizmos.DrawLine(
+            Core.CollisionSenses.WallCheck.position,
+            Core.CollisionSenses.WallCheck.position + (Vector3)(Vector2.right *Core.Movement.FacingDirection *Core.CollisionSenses.WallCheckDistance ));
+        Gizmos.DrawLine(
+            Core.CollisionSenses.DownLedgeCheck.position,
+            Core.CollisionSenses.DownLedgeCheck.position + (Vector3)(Vector2.down *Core.CollisionSenses.LedgeCheckDistance ));
+            
+    }
 }

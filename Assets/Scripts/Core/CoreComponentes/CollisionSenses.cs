@@ -7,7 +7,8 @@ public class CollisionSenses : CoreComponent
     public Transform GroundCheck {get => groundCheck; set => groundCheck = value;}
     public Transform CeilingCheck{get => ceilingCheck; set => ceilingCheck = value;}
     public Transform WallCheck{get => wallCheck; set => wallCheck = value;}
-    public Transform LedgeCheck{get => upperLedgeCheck; set => upperLedgeCheck = value;}
+    public Transform UpperLedgeCheck{get => upperLedgeCheck; set => upperLedgeCheck = value;}
+    public Transform DownLedgeCheck{get => upperLedgeCheck; set => upperLedgeCheck = value;}
 
     public LayerMask WhatIsGround { get => whatIsGround; set => whatIsGround = value; }
 
