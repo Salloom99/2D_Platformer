@@ -85,7 +85,6 @@ public class PlayerLedgeClimbState : PlayerState
             if(xInput == core.Movement.FacingDirection && isHanging && !isClimbing)
             {
                 CheckForSpace();
-                Debug.Log("cant stand" +cantStand );
                 isClimbing =true;
                 player.Anim.SetBool("climbLedge",true);
             }

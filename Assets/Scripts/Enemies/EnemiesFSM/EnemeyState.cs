@@ -24,7 +24,7 @@ public class EnemeyState
     {
         startTime = Time.time;
         enemey.Anim.SetBool(animBoolName,true);
-        Debug.Log(animBoolName);
+        // Debug.Log(animBoolName);
     }
 
     public virtual void Exit()
