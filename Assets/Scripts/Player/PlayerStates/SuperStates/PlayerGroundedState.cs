@@ -14,7 +14,6 @@ public class PlayerGroundedState : PlayerState
     private bool isTouchingWall;
     private bool isTouchingLedge;
 
-
     public PlayerGroundedState(Player player, PlayerData playerData, string animBoolName) : base(player, playerData, animBoolName)
     {
     }

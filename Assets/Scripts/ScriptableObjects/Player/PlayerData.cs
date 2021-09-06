@@ -39,5 +39,7 @@ public class PlayerData : ScriptableObject
 
     [Header("Slide State")]
     public float slideVelocity = 10f;
+    public float slideTime = 0.5f;
+    public float backToSlideTime = 1f;
 
 }

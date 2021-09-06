@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMoveState : PlayerGroundedState
 {
+    private bool canSlide;
+
     public PlayerMoveState(Player player, PlayerData playerData, string animBoolName) : base(player, playerData, animBoolName)
     {
     }
@@ -16,6 +18,8 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+
+        canSlide = true;
     }
 
     public override void Exit()
@@ -37,7 +41,7 @@ public class PlayerMoveState : PlayerGroundedState
 
         if(xInput == 0)
             stateMachine.ChangeState(player.IdleState);
-        else if(yInput ==-1)
+        else if(yInput ==-1 && canSlide)
             stateMachine.ChangeState(player.SlideState);
     }
 

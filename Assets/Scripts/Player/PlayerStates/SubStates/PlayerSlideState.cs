@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSlideState : PlayerGroundedState
-{    
+{   
 
 
     public PlayerSlideState(Player player, PlayerData playerData, string animBoolName) : base(player, playerData, animBoolName)
@@ -13,6 +13,7 @@ public class PlayerSlideState : PlayerGroundedState
      public override void Enter()
     {
         base.Enter();
+        startTime = Time.time;
         player.SetColliderHeight(playerData.crouchColliderHeight);
     }
 
@@ -28,7 +29,10 @@ public class PlayerSlideState : PlayerGroundedState
 
         if(isExitingState)
             return;
-        if(yInput ==-1)
+
+        bool stopSliding = Time.time >= startTime + playerData.slideTime;
+
+        if(yInput ==-1 && !stopSliding)
             core.Movement.SetVelocityX(playerData.slideVelocity * core.Movement.FacingDirection);
         else if(cantStand)
             stateMachine.ChangeState(player.CrouchIdleState);

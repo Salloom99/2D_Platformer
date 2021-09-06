@@ -18,6 +18,7 @@ public class CombatTest : MonoBehaviour,IDamageable
 
         Instantiate(hitParticles,transform.position,Quaternion.Euler(0f,0f,Random.Range(0f,360f)));
         anim.SetBool("damage",true);
+        anim.Play("Hit",-1,0);
         startTimer = Time.time;;
         //Destroy(gameObject);
     }
