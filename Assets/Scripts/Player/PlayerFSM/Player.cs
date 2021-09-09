@@ -41,6 +41,8 @@ public class Player : MonoBehaviour
     
     private Vector2 workspace;
 
+    [SerializeField] private TextMesh stateText;
+
     #endregion
 
     #region Unity Callback Functions
@@ -88,6 +90,9 @@ public class Player : MonoBehaviour
     {
         Core.LogicUpdate();
         StateMachine.CurrentState.LogicUpdate();
+
+        stateText.text = StateMachine.CurrentState.AnimBoolName;
+        stateText.transform.rotation = Quaternion.identity;
 
     }
 

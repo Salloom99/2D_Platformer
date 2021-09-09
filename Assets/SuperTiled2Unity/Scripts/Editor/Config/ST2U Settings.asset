@@ -54,4 +54,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 0.7372549, g: 0.56078434, b: 0.56078434, a: 1}
   m_CustomObjectTypes: []
-  m_PrefabReplacements: []
+  m_PrefabReplacements:
+  - m_TypeName: Dummy
+    m_Prefab: {fileID: 1731195942366455810, guid: fb844ba84ee413640a65a0c73aaab6ef, type: 3}

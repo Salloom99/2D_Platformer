@@ -17,6 +17,8 @@ public class PlayerState
 
     private string animBoolName;
 
+    public string AnimBoolName { get => animBoolName; set => animBoolName = value; }
+
     public PlayerState(Player player, PlayerData playerData, string animBoolName)
     {   
         this.player = player;
@@ -31,7 +33,7 @@ public class PlayerState
         DoChecks();
         player.Anim.SetBool(animBoolName,true);
         startTime = Time.time;
-        Debug.Log(animBoolName);
+        // Debug.Log(animBoolName);
         isAnimationFinished = false;
         isExitingState = false;
     }
