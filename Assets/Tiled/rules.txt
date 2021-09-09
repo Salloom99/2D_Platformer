@@ -1,1 +1,3 @@
-proto.tmx
+// proto.tmx
+jungle.tmx
+jungle_bg.tmx

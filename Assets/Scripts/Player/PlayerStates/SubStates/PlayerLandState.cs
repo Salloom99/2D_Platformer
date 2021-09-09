@@ -12,8 +12,13 @@ public class PlayerLandState : PlayerGroundedState
     {
         base.LogicUpdate();
 
+        
+
         if(isExitingState)
             return;
+
+        if(xInput == 0)
+            player.Core.Movement.SetVelocityX(0f);
         if(xInput !=0 )
             stateMachine.ChangeState(player.MoveState);
         else if(isAnimationFinished)

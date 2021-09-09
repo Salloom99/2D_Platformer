@@ -49,6 +49,11 @@ public class PlayerGroundedState : PlayerState
         JumpInput = player.InputHandler.JumpInput;
         grabInput = player.InputHandler.GrabInput;
 
+        // if(player.Core.CollisionSenses.Slope && xInput == 0)
+        //     player.Rb.sharedMaterial.friction = float.MaxValue;
+        // else
+        //     player.Rb.sharedMaterial.friction = 0f;
+
         if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && !cantStand)
         {
             stateMachine.ChangeState(player.PrimaryAttackState);
@@ -57,7 +62,7 @@ public class PlayerGroundedState : PlayerState
         {
             stateMachine.ChangeState(player.SecondaryAttackState);
         }
-        else if (JumpInput && player.JumpState.CanJump())
+        else if (JumpInput && player.JumpState.CanJump() && !cantStand)
         {
             player.StateMachine.ChangeState(player.JumpState);
         }

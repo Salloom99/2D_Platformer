@@ -62,6 +62,16 @@ public class CollisionSenses : CoreComponent
         get => Physics2D.Raycast(downLedgeCheck.position,Vector2.down,ledgeCheckDistance,whatIsGround);
     }
 
+    public RaycastHit2D SlopeDown
+    {
+        get => Physics2D.Raycast(groundCheck.position,Vector2.down,groundCheckRadius,whatIsGround);
+    }
+
+    public RaycastHit2D SlopeFront
+    {
+        get => Physics2D.Raycast(groundCheck.position,Vector2.right * core.Movement.FacingDirection,groundCheckRadius,whatIsGround);
+    }
+
     #endregion
 
 }
