@@ -35,8 +35,6 @@ public class PlayerAbilityState : PlayerState
     {
         base.LogicUpdate();
 
-        CheckFalling();
-
         if(isAblitiyDone)
         {
             if(isGrounded && player.Core.Movement.CurrentVelocity.y < 0.01f)
@@ -50,12 +48,6 @@ public class PlayerAbilityState : PlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-    }
-
-    private void CheckFalling()
-    {
-        if(player.Rb.velocity.y <= 0.1 || isGrounded)
-            player.Anim.SetBool("wallJump",false);
     }
 
 }

@@ -23,6 +23,13 @@ public class PlayerWallJumpState : PlayerAbilityState
         
     }
 
+    public override void Exit()
+    {
+        base.Exit();
+
+        player.Anim.SetBool("wallJump",false);
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
