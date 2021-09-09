@@ -18,6 +18,7 @@ public class PlayerWallJumpState : PlayerAbilityState
         core.Movement.SetVelocity(playerData.wallJumpVelocity,playerData.walljumpAngle,wallJumpDirection);
         core.Movement.CheckIfShouldFlip(wallJumpDirection);
         player.JumpState.UseJump();
+        player.Anim.SetBool("wallJump",true);
 
         
     }

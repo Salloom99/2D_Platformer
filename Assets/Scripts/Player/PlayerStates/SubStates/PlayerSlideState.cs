@@ -20,6 +20,7 @@ public class PlayerSlideState : PlayerGroundedState
     {
         base.Exit();
         player.SetColliderHeight(playerData.standColliderHeight);
+        player.StateMachine.SetSlideExitTime();
     }
 
     public override void LogicUpdate()

@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     #region Other Variables
     
     private Vector2 workspace;
+
     #endregion
 
     #region Unity Callback Functions
@@ -79,6 +80,8 @@ public class Player : MonoBehaviour
         PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
         //SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.secondary]);
         StateMachine.Initialize(IdleState);
+
+        StateMachine.SlideExitTime = -playerData.backToSlideTime;
     }
 
     private void Update()
@@ -103,7 +106,6 @@ public class Player : MonoBehaviour
         BoxCollider.size = workspace;
         BoxCollider.offset = center;
     }
-
 
     public void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 

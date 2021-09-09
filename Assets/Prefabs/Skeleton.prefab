@@ -347,13 +347,13 @@ MonoBehaviour:
   groundCheck: {fileID: 0}
   ceilingCheck: {fileID: 0}
   wallCheck: {fileID: 2078476493708501419}
-  upperLedgeCheck: {fileID: 2078476492681927847}
+  upperLedgeCheck: {fileID: 0}
   downLedgeCheck: {fileID: 2078476492681927847}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   groundCheckRadius: 0
-  wallCheckDistance: 0.5
+  wallCheckDistance: 0.8
   ledgeCheckDistance: 0.7
 --- !u!1 &2078476493708501416
 GameObject:

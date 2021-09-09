@@ -19,7 +19,6 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.Enter();
 
-        canSlide = true;
     }
 
     public override void Exit()
@@ -31,6 +30,8 @@ public class PlayerMoveState : PlayerGroundedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        canSlide = Time.time >= player.StateMachine.GetSlideExitTime() + playerData.backToSlideTime;
 
         core.Movement.CheckIfShouldFlip(xInput);
 

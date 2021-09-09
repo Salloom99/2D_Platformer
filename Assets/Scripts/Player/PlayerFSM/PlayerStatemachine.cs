@@ -6,6 +6,8 @@ public class PlayerStatemachine
 {
     public PlayerState CurrentState { get; private set; }
 
+    public float SlideExitTime;
+
     public void Initialize(PlayerState startingState)
     {
         CurrentState = startingState;
@@ -17,5 +19,15 @@ public class PlayerStatemachine
         CurrentState.Exit();
         CurrentState = newState;
         CurrentState.Enter();
+    }
+
+    public float GetSlideExitTime()
+    {
+        return SlideExitTime;
+    }
+
+    public void SetSlideExitTime()
+    {
+        SlideExitTime = Time.time;
     }
 }
