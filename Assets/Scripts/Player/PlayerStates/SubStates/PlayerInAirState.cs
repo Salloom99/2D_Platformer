@@ -45,6 +45,7 @@ public class PlayerInAirState : PlayerState
             StartWallJumpCoyoteTime();
         }
 
+
     }
 
     public override void Enter()
@@ -77,7 +78,6 @@ public class PlayerInAirState : PlayerState
         //     return;
 
         CheckJumpMultiplier();
-        CheckFalling();
 
         if (player.InputHandler.AttackInputs[(int)CombatInputs.primary])
         {
@@ -162,12 +162,6 @@ public class PlayerInAirState : PlayerState
         {
             wallJumpCoyoteTime = false;
         }
-    }
-
-    private void CheckFalling()
-    {
-        if(player.Rb.velocity.y <0)
-            player.Anim.SetBool("wallJump",false);
     }
 
     public void StartWallJumpCoyoteTime()
